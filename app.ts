@@ -1,5 +1,5 @@
 import express from "express";
-import { login } from "./controllers/auth";
+import { login, signUp } from "./controllers/auth";
 const cors = require("cors");
 import { getUserById } from "./controllers/user";
 require("dotenv").config();
@@ -73,6 +73,7 @@ app.get("/api/videos", (req: express.Request, res: express.Response) => {
 });
 
 app.post("/api/login", login);
+app.post("/api/signup", signUp);
 
 app.get("/api/user/:id", getUserById);
 
